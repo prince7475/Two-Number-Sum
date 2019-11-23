@@ -1,0 +1,26 @@
+Given an array and a target, find two numbers that sums up to the target
+
+
+function twoNumberSum(array,targetSum){
+  let prevNums = {}
+  for(let i = 0; i < array.length;i++){
+    let num = array[i]
+    let remainder = targetSum - num
+    if(remainder in prevNums){
+      return [remainder,num].sort((a,b) => a - b)
+    }
+    prevNums[num] = true
+  }
+  return []
+}
+
+
+let prevNums = {}
+let target
+array.forEach((num) => {
+  let remainder = target - num
+  if(remainder in prevNums) return [remainder,num].sort((a,b) => a - b)
+  prevNums[num] = true
+})
+
+return -1
